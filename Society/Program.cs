@@ -34,10 +34,18 @@ namespace Society
                 // person2.Birthday(person2.Ag);
 
                 pH.OutPrintInfo(david);
-
                 pH.FirstNameChange(david, "Jonas");
 
                 Console.WriteLine(david.FName);
+
+                pH.IncreasedHeight(david, david.Height);
+
+                Console.WriteLine(david.Height);
+
+                Person anna = pH.CreatePerson(28, "Anna", "Josefsson", 1.68, 60);
+
+                pH.OutPrintInfo(anna);
+                pH.OutPrintInfo(david);
 
 
             }

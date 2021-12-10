@@ -39,5 +39,10 @@ namespace Society
         {
             pers.FName = firstName;
         }
+
+        public void IncreasedHeight (Person pers, double height)
+        {
+            pers.Height += 0.02;
+        }
     }
 }
