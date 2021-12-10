@@ -9,15 +9,15 @@ namespace Society
         {
             try
             {
-                Person person1 = new Person();
+                //Person person1 = new Person();
 
-                person1.FName = null;
+                //person1.FName = "Art";
 
-                Console.WriteLine("Person 1 is " + person1.FName);
+                //Console.WriteLine("Person 1 is " + person1.FName);
 
-                person1.Age = 25;
+                //person1.Age = 25;
 
-                Console.WriteLine(person1 + " is " + person1.Age);
+                //Console.WriteLine(person1 + " is " + person1.Age);
 
                 PersonHandler pH = new PersonHandler();
 
@@ -33,7 +33,11 @@ namespace Society
 
                 // person2.Birthday(person2.Ag);
 
-                pH.outPrintInfo(david);
+                pH.OutPrintInfo(david);
+
+                pH.FirstNameChange(david, "Jonas");
+
+                Console.WriteLine(david.FName);
 
 
             }

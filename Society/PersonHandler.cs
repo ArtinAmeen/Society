@@ -26,13 +26,18 @@ namespace Society
             Console.WriteLine("Happy birthday " + pers.FName + "!");
         }
 
-        public void outPrintInfo(Person pers)
+        public void OutPrintInfo(Person pers)
         {
             Console.WriteLine("Age: " + pers.Age);
             Console.WriteLine("First name: " + pers.FName);
             Console.WriteLine("Last name: " + pers.LName);
             Console.WriteLine("Height: " + pers.Height);
             Console.WriteLine("Weight: " + pers.Weight);
+        }
+
+        public void FirstNameChange (Person pers, string firstName)
+        {
+            pers.FName = firstName;
         }
     }
 }
