@@ -8,6 +8,8 @@ namespace Society
 {
     class PersonHandler
     {
+        // we have two constructors below that can create a person, so no matter which one you use, you
+        // will always have to pass the first and last name as arguments.
         public Person CreatePerson(string fname, string lname, int age, double height, double weight)
         {
             Person pers = new Person(fname, lname, age, height, weight);
@@ -22,17 +24,21 @@ namespace Society
             return pers;
         }
 
+        // when accessing this method, you can set a person's age by passing the person object and its new age as arguments.
         public void SetAge(Person pers, int age)
         {
             pers.Age = age;
         }
 
+        // this method increments a person's age by one.
         public void Birthday(Person pers)
         {
             pers.Age++;
             Console.WriteLine($"Happy birthday, {pers.FName} {pers.LName}!");
         }
 
+        // this method will print out different messages, depending on which fields (besides first and last name)
+        // are zero or not.
         public void OutPrintInfo(Person pers)
         {
             if (pers.Height <= 0 && pers.Weight <= 0 && pers.Age < 1)
@@ -72,7 +78,7 @@ namespace Society
 
             else
             {
-                Console.WriteLine($"{pers.FName} {pers.LName} is {pers.Age} years old, {pers.Height} cm tall, and weighs {pers.Weight} kg");
+                Console.WriteLine($"{pers.FName} {pers.LName} is {pers.Age} years old, {pers.Height} cm tall, and weighs {pers.Weight} kg.");
             }
         }
 
@@ -84,7 +90,7 @@ namespace Society
         }
 
         // by calling this method, the person will grow by 2 centimetres.
-        public void IncreasedHeight(Person pers)
+        public void IncreaseHeight(Person pers)
         {
             pers.Height += 2;
             Console.WriteLine($"{pers.FName} {pers.LName} has grown by 2 centimetres.");

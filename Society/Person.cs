@@ -22,6 +22,7 @@ namespace Society
 
         //}
 
+        // with the constructor below, you can create a person and only give the person a first and last name.
         public Person(string fname, string lname)
         {
             FName = fname;
@@ -37,6 +38,7 @@ namespace Society
             Weight = weight;
         }
 
+        // a person can not have an age of zero or below.
         public int Age
         {
             set
@@ -58,6 +60,7 @@ namespace Society
             }
         }
 
+        // we can not give a person a first name shorter than 2 characters or longer than 10 characters, or set it at null.
         public string FName
         {
             set
@@ -89,6 +92,7 @@ namespace Society
             }
         }
 
+        // we can not give a person a last name shorter than 3 characters or longer than 15 characters, or set it at null.
         public string LName
         {
             set
