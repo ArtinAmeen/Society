@@ -14,26 +14,28 @@ namespace Society
         private double height;
         private double weight;
 
-        // with the constructor below, we can instanciate Person without the need to
-        // pass any arguments (we will have the possibility to do it later if we want to).
-        public Person()
+        // with the constructor below (that's presently a comment), we can instantiate Person without
+        // the need to pass any arguments.
+
+        //public Person()
+        //{
+
+        //}
+
+        public Person(string fname, string lname)
         {
-
+            FName = fname;
+            LName = lname;
         }
-        //public Person(string fname, string lname)
-        //{
-        //    FName = fname;
-        //    LName = lname;
-        //}
 
-        //public Person(string fname, string lname, int age, double height, double weight)
-        //{
-        //    FName = fname;
-        //    LName = lname;
-        //    Age = age;
-        //    Height = height;
-        //    Weight = weight;
-        //}
+        public Person(string fname, string lname, int age, double height, double weight)
+        {
+            FName = fname;
+            LName = lname;
+            Age = age;
+            Height = height;
+            Weight = weight;
+        }
 
         public int Age
         {
@@ -41,7 +43,7 @@ namespace Society
             {
                 if (value < 1)
                 {
-                    throw (new ArgumentException("Age can not be lower than 1"));
+                    throw (new ArgumentException("The age of the person is invalid. It cannot be under 1."));
                 }
 
                 else
@@ -65,9 +67,14 @@ namespace Society
                     throw new ArgumentNullException();
                 }
 
-                else if (value.Length < 2 || value.Length > 10)
+                else if (value.Length < 2)
                 {
-                    throw new ArgumentException("First name must be between 2 and 10 characters!");
+                    throw new ArgumentException("First name is too short. It has to be between 2 and 10 characters.");
+                }
+
+                else if (value.Length > 10)
+                {
+                    throw new ArgumentException("First name is too long. It has to be between 2 and 10 characters.");
                 }
 
                 else
@@ -91,9 +98,14 @@ namespace Society
                     throw new ArgumentNullException();
                 }
 
-                else if (value.Length < 3 || value.Length > 15)
+                else if (value.Length < 3)
                 {
-                    throw new ArgumentException("Last name must be between 3 and 15 characters!");
+                    throw new ArgumentException("Last name is too short. It has to be between 3 and 15 characters.");
+                }
+
+                else if (value.Length > 15)
+                {
+                    throw new ArgumentException("Last name is too long. It has to be between 3 and 15 characters.");
                 }
 
                 else
