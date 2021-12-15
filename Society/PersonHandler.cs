@@ -35,7 +35,15 @@ namespace Society
 
         public void OutPrintInfo(Person pers)
         {
-            Console.WriteLine($"{pers.FName} {pers.LName} is {pers.Age} years old, {pers.Height} cm tall, and weighs {pers.Weight} kg");
+            if (pers.Height <= 0 || pers.Weight <= 0 || pers.Age < 1)
+            {
+                Console.WriteLine($"{pers.FName} {pers.LName} is a person we do not have full information about.");
+            }
+
+            else
+            {
+                Console.WriteLine($"{pers.FName} {pers.LName} is {pers.Age} years old, {pers.Height} cm tall, and weighs {pers.Weight} kg");
+            }
         }
 
         // by calling this method, the person will change the current first name to a new one.
@@ -49,6 +57,7 @@ namespace Society
         public void IncreasedHeight(Person pers)
         {
             pers.Height += 2;
+            Console.WriteLine($"{pers.FName} {pers.LName} has grown by 2 centimetres.");
         }
     }
 }

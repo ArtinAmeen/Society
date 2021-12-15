@@ -43,7 +43,7 @@ namespace Society
                 pH.OutPrintInfo(david);
 
                 Person p1 = pH.CreatePerson("Erik", "Eriksson");
-                p1.Age = 11;
+                pH.OutPrintInfo(p1);
             }
 
             catch (Exception e)
