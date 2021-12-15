@@ -14,19 +14,26 @@ namespace Society
         private double height;
         private double weight;
 
-        public Person(int age, string fname, string lname, double height, double weight)
-        {
-            Age = age;
-            FName = fname;
-            LName = lname;
-            Height = height;
-            Weight = weight;
-        }
-
+        // with the constructor below, we can instanciate Person without the need to
+        // pass any arguments (we will have the possibility to do it later if we want to).
         public Person()
         {
 
         }
+        //public Person(string fname, string lname)
+        //{
+        //    FName = fname;
+        //    LName = lname;
+        //}
+
+        //public Person(string fname, string lname, int age, double height, double weight)
+        //{
+        //    FName = fname;
+        //    LName = lname;
+        //    Age = age;
+        //    Height = height;
+        //    Weight = weight;
+        //}
 
         public int Age
         {
@@ -34,7 +41,7 @@ namespace Society
             {
                 if (value < 1)
                 {
-                    throw (new ArgumentException("age can not be lower than 1"));
+                    throw (new ArgumentException("Age can not be lower than 1"));
                 }
 
                 else
@@ -60,7 +67,7 @@ namespace Society
 
                 else if (value.Length < 2 || value.Length > 10)
                 {
-                    throw new ArgumentException();
+                    throw new ArgumentException("First name must be between 2 and 10 characters!");
                 }
 
                 else
@@ -86,7 +93,7 @@ namespace Society
 
                 else if (value.Length < 3 || value.Length > 15)
                 {
-                    throw new ArgumentException();
+                    throw new ArgumentException("Last name must be between 3 and 15 characters!");
                 }
 
                 else
@@ -126,12 +133,6 @@ namespace Society
             {
                 return weight;
             }
-
-        }
-
-        public void Birthday(int age)
-        {
-            ++age;
         }
     }
 }
