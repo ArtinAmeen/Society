@@ -35,9 +35,39 @@ namespace Society
 
         public void OutPrintInfo(Person pers)
         {
-            if (pers.Height <= 0 || pers.Weight <= 0 || pers.Age < 1)
+            if (pers.Height <= 0 && pers.Weight <= 0 && pers.Age < 1)
             {
-                Console.WriteLine($"{pers.FName} {pers.LName} is a person we do not have full information about.");
+                Console.WriteLine($"{pers.FName} {pers.LName} is a person we do not have much information about.");
+            }
+
+            else if (pers.Height <= 0 && pers.Weight <= 0)
+            {
+                Console.WriteLine($"{pers.FName} {pers.LName} is {pers.Age} years old.");
+            }
+
+            else if (pers.Weight <= 0 && pers.Age <= 0)
+            {
+                Console.WriteLine($"{pers.FName} {pers.LName} is {pers.Height} cm tall.");
+            }
+
+            else if (pers.Height <= 0 && pers.Age <= 0)
+            {
+                Console.WriteLine($"{pers.FName} {pers.LName} weighs {pers.Weight} kg.");
+            }
+
+            else if (pers.Height <= 0)
+            {
+                Console.WriteLine($"{pers.FName} {pers.LName} is {pers.Age} years old and weighs {pers.Weight} kg.");
+            }
+
+            else if (pers.Weight <= 0)
+            {
+                Console.WriteLine($"{pers.FName} {pers.LName} is {pers.Age} years old and {pers.Height} cm tall.");
+            }
+
+            else if (pers.Age <= 0)
+            {
+                Console.WriteLine($"{pers.FName} {pers.LName} is {pers.Height} cm tall and weighs {pers.Weight} kg.");
             }
 
             else

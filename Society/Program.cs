@@ -44,6 +44,13 @@ namespace Society
 
                 Person p1 = pH.CreatePerson("Erik", "Eriksson");
                 pH.OutPrintInfo(p1);
+
+                // error, we must have both the first and the last name of the person and as two separate arguments.
+                // Person p2 = pH.CreatePerson("Peter");
+
+                Person p3 = pH.CreatePerson("Jan", "Persson");
+                pH.SetAge(p3, 23);
+                pH.OutPrintInfo(p3);
             }
 
             catch (Exception e)
